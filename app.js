@@ -11,6 +11,7 @@ function fillSelect() {
   }
 }
 fillSelect();
+renderH();
 function Food( name, type, price, img ) {
   this.name = name;
   this.type = type;
@@ -73,4 +74,21 @@ function removeRow( e ) {
     Food.all.splice( e.target.parentElement.rowIndex - 1, 1 );
     setData();
   }
+}
+
+
+function renderH() {
+  let tr = document.createElement( 'tr' );
+  table.appendChild( tr );
+  let td2 = document.createElement( 'th' );
+  td2.textContent = '#';
+  tr.appendChild( td2 );
+
+  let td = document.createElement( 'th' );
+  td.textContent = 'Image';
+  tr.appendChild( td );
+
+  td2 = document.createElement( 'th' );
+  td2.textContent = 'Order Data';
+  tr.appendChild( td2 );
 }
